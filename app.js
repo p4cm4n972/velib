@@ -13,7 +13,6 @@ var db = require('./db.js');
 app.get('/', function(req, res, next) {
     var collection = db.get().collection('paris');
     collection.find().toArray(function (err,data) {
-        console.log(data[0]);
     res.render('index');
     })
 });
@@ -32,6 +31,8 @@ app.get('/map', function(req, res, next) {
         if (data.length > 0) {
             velibStrArray = JSON.stringify(data);
         }
+          var velib = !{velibStrArray};
+        console.log(data[0].latitude)
     res.render('map',{req: req, velibStrArray: velibStrArray, title: 'Map Velib'});
     })
 })
