@@ -1,0 +1,9 @@
+include head
+
+
+h1 Velib de Paris
+each val, index in file
+    p.lead.section-lead #{file[index].name}
+    p.section-paragraph #{file[index].address}
+
+include footer
